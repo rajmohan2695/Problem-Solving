@@ -20,7 +20,7 @@
         overflows.
 */
 
-
+package Problem_Solving;
 public class ReverseInteger {
     public static void main(String[] args) {
         int number = 123;

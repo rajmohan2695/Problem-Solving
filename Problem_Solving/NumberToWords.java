@@ -1,7 +1,7 @@
+package Problem_Solving;
 import java.util.ArrayList;
-
 public class NumberToWords {
-    public static void main(String[] args) {
+    public static void MorethanThousand(int number) {
 
         String[] num = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         String[] tens = {"", "ten", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"};
@@ -24,7 +24,6 @@ public class NumberToWords {
                 {"hundred","thousand","lakhs","crore"}};
 
 
-        int number = 123643;
         int[] digit = new int[8];
         int hold[] = {0, 0, 0, 0, 0, 0, 0, 0};
         int a = -1;
