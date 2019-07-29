@@ -1,10 +1,3 @@
-<html>
-<head>
-<title>Arrays</title>
-</head>
-<body>
-
-<script>
 	// Working with Arrays in JavaScript
 	// Using push and splice
 	// push is used to push the elements into an array
@@ -23,7 +16,3 @@
 								
 	console.log(student);	
 	console.log(naughtyList);
-</script>
-
-</body>
-</html>

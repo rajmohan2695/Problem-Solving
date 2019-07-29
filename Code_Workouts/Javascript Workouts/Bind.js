@@ -1,10 +1,3 @@
-<html>
-<head>
-<title>Bind</title>
-</head>
-<body>
-
-<script>
   // Using Bind Function.
 	this.age = 13;
   function student(firstName,lastName,age){
@@ -27,7 +20,3 @@
 
   // console.log(student1.firstName,student1.lastName,student1.age);
   // console.log(student2.firstName,student2.lastName,student2.age);
-</script>
-
-</body>
-</html>

@@ -1,10 +1,4 @@
-<html>
-<head>
-<title>Functions</title>
-</head>
-<body>
 
-<script>
 	//Working with Functions
 
 //Function to find areas and push them into an array
@@ -42,7 +36,3 @@ transaction(100);
 transaction(500);
 transaction(10);
 transaction(100);
-</script>
-
-</body>
-</html>

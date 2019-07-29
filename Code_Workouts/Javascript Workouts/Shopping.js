@@ -1,10 +1,3 @@
-<html>
-<head>
-<title>Nike</title>
-</head>
-<body>
-
-<script>
 	var accountBalance = 400;
 	var nikeShoes = 400;
 	var coupon = 50;
@@ -21,7 +14,3 @@
 	{
 	console.log("Insufficient money to buy nike shoes");
 	}
-</script>
-
-</body>
-</html>
