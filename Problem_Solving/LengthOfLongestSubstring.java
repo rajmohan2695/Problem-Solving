@@ -22,35 +22,31 @@ package Problem_Solving;
 
 import java.util.HashMap;
 
-public class LongestSubstringWRC {
+public class LengthOfLongestSubstring {
     public static void main(String[] args) {
-        String str = "jbpnbwwd";
+        String str = "programming";
         System.out.println(lengthOfLongestSubstring(str));
     }
+
     public static int lengthOfLongestSubstring(String str) {
-        HashMap<Character,Integer> s = new HashMap();
-        if(str.length()==0){
+        HashMap<Character, Integer> s = new HashMap();
+        if (str.length() == 0) {
             return 0;
         }
-        int max=1;
-        int cmax=0; //current Maximum
-        for(int i=0;i<str.length();i++){
-            if(!s.containsKey(str.charAt(i))){
-                s.put(str.charAt(i),i);
+        int max = 1;
+        int cmax = 0; //current Maximum
+        for (int i = 0; i < str.length(); i++) {
+            if (!s.containsKey(str.charAt(i))) {
+                s.put(str.charAt(i), i);
                 cmax++;
-            }
-            else{
-                if(cmax>max){
-                    max=cmax;
-                    i=i-cmax;
-                    cmax=0;
-
-                    s.clear();
+                if (cmax > max) {
+                    max = cmax;
                 }
+            } else {
+                i = i - cmax;
+                cmax = 0;
+                s.clear();
             }
-        }
-        if(cmax>max){
-            max=cmax;
         }
         return max;
     }
