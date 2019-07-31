@@ -4,10 +4,23 @@ import java.util.HashMap;
 
 public class ValidSudoku {
     public static void main(String[] args){
-        
+        char board[][]={{'4','.','.','.','5','.','.','1','.'},
+                        {'.','4','.','3','.','.','.','.','.'},
+                        {'.','.','.','.','.','3','.','.','1'},
+                        {'8','.','.','.','.','.','.','2','.'},
+                        {'.','.','2','.','7','.','.','.','.'},
+                        {'.','1','5','.','.','.','.','.','.'},
+                        {'.','.','.','.','.','2','.','.','.'},
+                        {'.','2','.','9','.','.','.','.','.'},
+                        {'.','.','8','.','.','.','.','.','9'}};
+        System.out.println(isValidSudoku(board));
     }
     public static boolean isValidSudoku(char[][] board) {
+        HashMap<Character,String> box = new HashMap();
         for(int i=0;i<board.length;i++){
+            if(i%3==0){
+                box.clear();
+            }
             HashMap<Character,Integer> hm = new HashMap();
             HashMap<Character,Integer> hmn = new HashMap();
             for(int j=0;j<board[i].length;j++){
@@ -23,7 +36,12 @@ public class ValidSudoku {
                 else{
                     return false;
                 }
-
+                if(!box.containsKey(board[i][j]) || board[i][j] == '.'){
+                    box.put(board[i][j],""+j%3+i);
+                }
+                else if(box.get(board[i][j]).chatAt(0)) == 'k' && i){
+                    return false;
+                }
             }
         }
 
