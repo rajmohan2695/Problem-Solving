@@ -30,6 +30,16 @@ for each person in the Person table, regardless if there is an address
 for each of those people:
 
 FirstName, LastName, City, State
+
+Sample Input :
+{"headers": {"Person": ["PersonId", "LastName", "FirstName"],
+ "Address": ["AddressId", "PersonId", "City", "State"]},
+ "rows": {"Person": [[1, "Wang", "Allen"]],
+ "Address": [[1, 2, "New York City", "New York"]]}}
+ 
+ Sample Output :
+ {"headers":["FirstName","LastName","City","State"],
+ "values":[["Allen","Wang",null,null]]}
 */
 
 select FirstName,LastName,City,State from 
