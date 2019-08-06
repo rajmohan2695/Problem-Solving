@@ -58,7 +58,7 @@ public class ValidSudoku {
     public static void main(String[] args) {
 
           char board[][] = {{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-                            {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+                            {'6', '.', '7', '1', '9', '5', '.', '.', '.'},
                             {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
                             {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
                             {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
@@ -89,16 +89,16 @@ public class ValidSudoku {
                 box2.clear();
                 box3.clear();
             }
-            HashMap<Character, Integer> hm = new HashMap();
-            HashMap<Character, Integer> hmn = new HashMap();
+            HashMap<Character, Integer> row = new HashMap();
+            HashMap<Character, Integer> column = new HashMap();
             for (int j = 0; j < board[i].length; j++) {
-                if (!hm.containsKey(board[i][j]) || board[i][j] == '.') {
-                    hm.put(board[i][j], i);
+                if (!row.containsKey(board[i][j]) || board[i][j] == '.') {
+                    row.put(board[i][j], i);
                 } else {
                     return false;
                 }
-                if (!hmn.containsKey(board[j][i]) || board[j][i] == '.') {
-                    hmn.put(board[j][i], j);
+                if (!column.containsKey(board[j][i]) || board[j][i] == '.') {
+                    column.put(board[j][i], j);
                 } else {
                     return false;
                 }
