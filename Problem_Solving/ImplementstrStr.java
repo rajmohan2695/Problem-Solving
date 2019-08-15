@@ -23,7 +23,7 @@ package Problem_Solving;
 
 public class ImplementstrStr {
     public static void main(String[] args) {
-        String haystack = "Hello";
+        String haystack = "hello";
         String needle = "ll";
         System.out.println(strStr(haystack, needle));
     }
