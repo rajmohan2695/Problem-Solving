@@ -8,7 +8,7 @@ public class Stack {
 
     }
     public void push(int a){
-        i=i+1;
+        i++;
         stack[i] = a;
     }
     public void pop(){
