@@ -7,6 +7,7 @@ public class App {
         s.push(10);
         s.pop();
         s.push(34);
+        s.push(35);
         s.display();
     }
 }
