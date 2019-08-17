@@ -12,7 +12,6 @@ public class Stack {
 
     public void push(int a) {
         if (!isFull()) {
-            System.out.print("");
             current++;
             stack[current] = a;
         } else {
@@ -22,7 +21,6 @@ public class Stack {
 
     public void pop() {
         if (!isEmpty()) {
-            System.out.print("");
             --current;
         } else {
             System.out.println("No elements to delete");

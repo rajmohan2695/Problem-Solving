@@ -5,17 +5,13 @@ public class App {
         Stack s = new Stack(5);
         s.push(5);
         s.push(10);
-        s.pop();
-        s.pop();
-        s.pop();
-        s.pop();
-        s.pop();
-        s.pop();
         s.push(34);
         s.push(34);
-        s.push(34);
-        s.push(34);
+        s.pop();
         s.push(35);
+        s.push(100);
         s.display();
+        System.out.println(s.isFull());
+        System.out.println(s.isEmpty());
     }
 }
