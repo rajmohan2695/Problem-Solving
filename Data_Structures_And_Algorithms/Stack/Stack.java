@@ -19,6 +19,14 @@ public class Stack {
         }
     }
 
+    public String peek() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            return String.valueOf(stack[current]);
+        }
+    }
+
     public void pop() {
         if (!isEmpty()) {
             --current;
