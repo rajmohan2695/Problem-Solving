@@ -5,7 +5,7 @@ public class LinearSearch {
 
     }
 
-    public int Search(int[] elements, int elementToFind) {
+    public int linearSearch(int[] elements, int elementToFind) {
         int e = -1;
         for (int i = 0; i < elements.length; i++) {
             if (elements[i] == elementToFind) {
