@@ -57,6 +57,6 @@ public class SinglyLinkedList {
             temp = current.data;
             current.next = null;
         }
-        return 0;
+        return 1;
     }
 }
