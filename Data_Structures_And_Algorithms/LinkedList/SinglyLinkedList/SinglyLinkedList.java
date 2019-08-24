@@ -1,4 +1,4 @@
-package Data_Structures_And_Algorithms.SinglyLinkedList;
+package Data_Structures_And_Algorithms.LinkedList.SinglyLinkedList;
 
 public class SinglyLinkedList {
     Node first = null;
