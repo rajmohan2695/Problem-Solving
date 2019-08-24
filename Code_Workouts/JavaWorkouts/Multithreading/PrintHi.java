@@ -9,6 +9,11 @@ public class PrintHi extends Thread {
         int i=0;
         while(i<10){
             System.out.println("Hi");
+            try{
+                Thread.sleep(500);
+            }
+            catch(Exception e){
+            }
             i++;
         }
     }
