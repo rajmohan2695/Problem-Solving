@@ -1,0 +1,43 @@
+body{
+    background-color: beige;
+    font-family: Helvetica,'Times New Roman', Times, serif;
+}
+a{
+    text-decoration : none;
+    color : red;
+}
+#bimg{
+    width : 800px;
+}
+#container{
+    padding : 10px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#header{
+    text-align: center;
+    color: white;
+    background-color: #eb6d3b;
+}
+#navbar{
+    float : left;
+    width : 100px;
+    padding : 10px;
+    text-decoration: none;
+}
+#navbar ul{
+    list-style-type: none;
+}
+#navbar ul #selected{
+    font-weight: bold;
+}
+#main{
+    padding : 10px;
+    width : 600px;
+    float : right;
+}
+#footer{
+    clear : both;
+    text-align: right;
+}
