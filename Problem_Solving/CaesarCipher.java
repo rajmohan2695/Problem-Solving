@@ -73,16 +73,19 @@ class CaeserCipher {
         for (int i = 0; i < s.length(); i++) {
             int l = s.charAt(i);
             if ((l >= 65 && l <= 90)) {
-                int j = (l + k) % 91;
-                if (j < 65) {
+                int j = (l + k);
+                if (j>90){
+                    j = ((j % 90)%26)-1;
                     r = r + (char) (65 + j);
                 }
                 else
                     r = r + (char) j;
             } else if (l >= 97 && l <= 122) {
-                int j = (l + k) % 123;
-                if (j < 97)
-                    r = r + (char)(97 + j);
+                int j = (l + k);
+                if (j>122&&j!=122){
+                    j = ((j % 122)%26)-1;
+                    r = r + (char) (97 + j);
+                }
                 else
                     r = r + (char) j;
             } else {
