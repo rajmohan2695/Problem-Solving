@@ -70,39 +70,35 @@ import java.util.regex.*;
 class CaeserCipher {
     static String caesarCipher(String s, int k) {
         String r = "";
+        k = k % 26;
         for (int i = 0; i < s.length(); i++) {
             int l = s.charAt(i);
-            if ((l >= 65 && l <= 90)) {
+            if (l >= 65 && l <= 90) {
                 int j = (l + k);
-                if (j>90){
-                    j = ((j % 90)%26)-1;
-                    r = r + (char) (65 + j);
-                }
+                if (j > 90)
+                    r = r + (char) (64 + j - 90);
                 else
                     r = r + (char) j;
             } else if (l >= 97 && l <= 122) {
                 int j = (l + k);
-                if (j>122&&j!=122){
-                    j = ((j % 122)%26)-1;
-                    r = r + (char) (97 + j);
-                }
+                if (j > 122)
+                    r = r + (char) (96 + j - 122);
                 else
                     r = r + (char) j;
-            } else {
+            } else
                 r = r + s.charAt(i);
-            }
         }
         return r;
     }
 
-    public static void main(String[] args) throws IOException {
-        int size = 0;
+    public static void main(String[] args) {
+        //int size = 0;
         String str;
         int ro;
-        Scanner sc = new Scanner(System.in);
+        Scanner dc = new Scanner(System.in);
         //size=sc.nextInt();
-        str=sc.next();
-        ro=sc.nextInt();
-        System.out.println(caesarCipher(str,ro));
+        str = dc.next();
+        ro = dc.nextInt();
+        System.out.println(caesarCipher(str, ro));
     }
 }
