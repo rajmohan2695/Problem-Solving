@@ -67,7 +67,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-class CaeserCipher {
+class CaesarCipher {
     static String caesarCipher(String s, int k) {
         String r = "";
         k = k % 26;
