@@ -21,28 +21,23 @@ package Problem_Solving;
 public class ContainerWithMostWaterMM {
     public static int maxArea(int[] height) {
         int max = 0;
-        int tmax = 0;
-        for (int i = 0; i < height.length; iit++) {
+        for (int i = 0; i < height.length; i++) {
             for (int j = height.length - 1; j >= 0; j--) {
                 if (height[i] <= height[j]) {
-                    tmax = height[i] * (j - i);
+                    if (max < height[i] * (j - i)) {
+                        max = height[i] * (j - i);
+                    }
                     break;
                 } else if (max < (height[j] * (j - i))) {
-                    tmax = height[j] * (j - i);
-                    if (tmax > max) {
-                        max = tmax;
-                    }
+                    max = height[j] * (j - i);
                 }
-            }
-            if (tmax > max) {
-                max = tmax;
             }
         }
         return max;
     }
 
     public static void main(String[] args) {
-        int a[] = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        int a[] = {2, 3, 4, 5, 18, 17, 6};
         System.out.println(maxArea(a));
     }
 }
