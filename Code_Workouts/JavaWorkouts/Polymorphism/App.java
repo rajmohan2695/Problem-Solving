@@ -6,6 +6,6 @@ public class App {
         b.add(1,2);
         b.add(1,2,3);
         b.add(1,2,3,4);
-        b.load();
+        System.out.println(b.load());
     }
 }
