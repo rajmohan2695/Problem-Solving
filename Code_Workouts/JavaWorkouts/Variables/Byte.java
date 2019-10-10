@@ -9,5 +9,14 @@ public class Byte {
         int d = 130;
         byte e = (byte) d;
         System.out.println(e);
+        c+=a;
+        System.out.println(c);
     }
 }
+
+/*
+Output:
+    30
+    -126
+    40
+ */
