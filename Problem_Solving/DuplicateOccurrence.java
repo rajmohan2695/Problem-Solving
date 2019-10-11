@@ -6,8 +6,9 @@ public class DuplicateOccurrence {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         char word[] = scan.next().toCharArray();
-        char record[] = new char[word.length+1];
-        int k=0;
+        char record[] = new char[word.length + 1];
+        int k = 0;
+        int count = 0;
         occured:
         for (int i = 0; i < word.length; i++) {
             System.out.println(i);
@@ -15,16 +16,17 @@ public class DuplicateOccurrence {
                 if (a == word[i])
                     continue occured;
                 else {
-                    record[k++]=word[i];
-                    int count = 1;
+                    record[k++] = word[i];
+                    count = 1;
                     for (int j = i + 1; j < word.length; j++) {
                         if (word[i] == record[j]) {
                             count++;
                         }
                     }
-                    System.out.println(word[i] + " occurs " + count + " times");
+
                 }
             }
+            System.out.println(word[i] + " occurs " + count + " times");
         }
     }
 }
