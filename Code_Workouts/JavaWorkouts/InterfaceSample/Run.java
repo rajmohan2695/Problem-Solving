@@ -1,5 +1,7 @@
 package Code_Workouts.JavaWorkouts.InterfaceSample;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Run {
     public static void main(String[] args) {
         Vehicle c = new Car();
@@ -8,7 +10,8 @@ public class Run {
         process(b);
 
     }
-    public static void process(Vehicle c){
+
+    public static void process(Vehicle c) {
         c.mileage();
     }
 
