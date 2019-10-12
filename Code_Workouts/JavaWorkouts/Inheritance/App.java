@@ -8,5 +8,22 @@ public class App {
         p.information();
         System.out.println();
         c.informationc();
+
+        System.out.println("Parent Networth is : "+c.parentsAsserts());
     }
 }
+/*
+        Output:
+        Parent Class constructor executed
+        5
+        Child Class constructor executed
+        Name : John
+        Age : 50
+        Networth : 25000
+
+        Name : Peter
+        Age : 25
+        Parent Name John
+        Networth : 40000
+        Parent Networth is : 25000
+ */
