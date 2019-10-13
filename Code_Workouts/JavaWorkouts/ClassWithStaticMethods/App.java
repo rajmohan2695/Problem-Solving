@@ -5,7 +5,7 @@ public class App {
         System.out.println(Adder.add(5,10));
         System.out.println(Adder.add(5,10,15));
 
-        System.out.println(Adder2.add(5.12,5.12));
+        System.out.println(Adder2.add(5,5.12));
 
         Adder obj = new Adder();
 
@@ -13,3 +13,12 @@ public class App {
         System.out.println(obj.multiply(5,10));
     }
 }
+
+/*
+        Output:
+        15
+        30
+        10.120000000000001
+        40
+        50
+ */
