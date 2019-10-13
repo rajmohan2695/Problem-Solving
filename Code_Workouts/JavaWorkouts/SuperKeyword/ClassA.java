@@ -5,6 +5,7 @@ public class ClassA {
 
     ClassA() {
         super();
+        System.out.println("Parent Constructor");
     }
 
     public int value() {
