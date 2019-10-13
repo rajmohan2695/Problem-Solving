@@ -15,7 +15,7 @@ public class Kangaroo {
             k1 = k1 + input[1];
             k2 = k2 + input[3];
             if (k1 < k2) {
-                System.out.println(k1 + " " + k2);
+                //System.out.println(k1 + " " + k2);
                 continue;
             } else if (k1 == k2)
                 return "YES";
