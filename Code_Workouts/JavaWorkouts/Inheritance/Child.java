@@ -4,6 +4,12 @@ public class Child extends Parent {
     private int networthc = 15000;
     private String namec = "Peter";
     private int agec = 25;
+    static void method()
+    {
+        Parent.method();
+        System.out.println("child Class call");
+    }
+
 
     Child() {
         super(5);
@@ -19,6 +25,7 @@ public class Child extends Parent {
     }
 
     public void informationc() {
+        Parent.method();
         System.out.println("Name : " + namec);
         System.out.println("Age : " + agec);
         System.out.println("Parent Name " + namep);
