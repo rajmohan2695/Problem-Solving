@@ -1,4 +1,4 @@
-package Code_Workouts.JavaWorkouts.ClassWithStaticMethods;
+package Code_Workouts.JavaWorkouts.Static.StaticMethods;
 
 public class App {
     public static void main(String[] args) {
