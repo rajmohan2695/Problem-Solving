@@ -1,9 +1,13 @@
 package Code_Workouts.JavaWorkouts.Static.StaticKeyword;
 
-public class ClassA{
+public class ClassA {
     static int mstatic;
 
-    public int onepps(){
+    public static int staticpp(){
+        return ++mstatic;
+    }
+
+    public int onepps() {
         return ++mstatic;
     }
 }

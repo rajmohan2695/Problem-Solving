@@ -10,6 +10,8 @@ public class App {
         System.out.println(c.onepps());
         ClassA d = new ClassA();
         System.out.println(d.onepps());
+        System.out.println(ClassA.staticpp());
+        System.out.println(c.onepps());
     }
 }
 
@@ -19,4 +21,6 @@ public class App {
         1
         2
         3
+        4
+        5
  */
