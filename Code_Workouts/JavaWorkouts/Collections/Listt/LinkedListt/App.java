@@ -2,6 +2,7 @@ package Code_Workouts.JavaWorkouts.Collections.Listt.LinkedListt;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class App {
     public static void main(String[] args) {
@@ -14,10 +15,20 @@ public class App {
         ll.add(30);
         ll.add(2,15);
 
+        ListIterator lv = ll.listIterator();
+//        lv.next();
+//        lv.set(200);
+
         Iterator itr = ll.iterator();
 
-        while(itr.hasNext()){
-            System.out.println(itr.next());
+        while(lv.hasNext()) {
+            lv.next();
+            System.out.println(lv.nextIndex());
+        }
+
+
+        while(lv.hasPrevious()){
+            System.out.println(lv.previous());
         }
     }
 }
