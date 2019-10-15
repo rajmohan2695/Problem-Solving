@@ -1,6 +1,7 @@
-package Code_Workouts.JavaWorkouts.Collections.ArrayListt;
+package Code_Workouts.JavaWorkouts.Collections.Listt.ArrayListt;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class App {
     public static void main(String[] args) {
@@ -19,6 +20,8 @@ public class App {
         //al.sort();
 
         al.clear();
+
+        Iterator<String> itr=al.iterator();
 
         System.out.println(al.contains("D"));
     }
