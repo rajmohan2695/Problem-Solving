@@ -5,20 +5,33 @@ import java.io.*;
 public class App {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 //        PhoneBook phonebook = new PhoneBook();
-//        phonebook.add("Raj","9787818277");
-//        phonebook.add("Mohan","97879787818277");
-////        phonebook.show("Mohan");
-//        phonebook.add("Raju","9777777");
-//        File f = new File("obj.txt");
-//        FileOutputStream fos = new FileOutputStream(f);
-//        ObjectOutputStream oos = new ObjectOutputStream(fos);
-//        oos.writeObject(phonebook);
 
         File fi = new File("obj.txt");
         FileInputStream fis = new FileInputStream(fi);
         ObjectInputStream ois = new ObjectInputStream(fis);
-        PhoneBook phonebook1 = (PhoneBook)ois.readObject();
+        PhoneBook phonebook = (PhoneBook)ois.readObject();
 
-        phonebook1.show("Raju");
+//        phonebook.add("Raj","9787818277");
+//        phonebook.add("Mohan","97879787818277");
+//        phonebook.show("Mohan");
+//        phonebook.add("Raju","9777777");
+
+//        phonebook.add("Kavin","987989");
+
+//        phonebook.add("Fun","555656");
+//        phonebook.show("Fun");
+
+        phonebook.show("Mohan");
+
+        File f = new File("obj.txt");
+        FileOutputStream fos = new FileOutputStream(f);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(phonebook);
+
+
+
+
+
+//        phonebook.show("Raju");
     }
 }
