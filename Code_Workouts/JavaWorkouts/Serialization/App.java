@@ -7,6 +7,7 @@ public class App {
 //        PhoneBook phonebook = new PhoneBook();
 
         File fi = new File("obj.txt");
+        fi.createNewFile();
         FileInputStream fis = new FileInputStream(fi);
         ObjectInputStream ois = new ObjectInputStream(fis);
         PhoneBook phonebook = (PhoneBook)ois.readObject();
@@ -18,10 +19,10 @@ public class App {
 
 //        phonebook.add("Kavin","987989");
 
-//        phonebook.add("Fun","555656");
+//        phonebook.add("Run","8888");
 //        phonebook.show("Fun");
 
-        phonebook.show("Mohan");
+        phonebook.show("Run");
 
         File f = new File("obj.txt");
         FileOutputStream fos = new FileOutputStream(f);
