@@ -9,15 +9,26 @@ public class ToFindNumberOfInstances {
         String s = scan.nextLine();
         int iscount = 0;
         int thecount = 0;
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.substring(i, i + 2).equals("is")) {
-                iscount++;
+
+        for (int i = 0; i < s.length() - 2; i++) {
+
+            if ((i<s.length()-3)&&(s.substring(i, i + 4).equals("the "))) {
+                thecount++;
+            }
+            else if((i==s.length()-3)&&(s.substring(i, i + 3).equals("the"))){
+                thecount++;
+                break;
             }
         }
 
-        for (int i = 0; i < s.length() - 2; i++) {
-            if (s.substring(i, i + 3).equals("the")) {
+        for (int i = 0; i < s.length() - 1; i++) {
+
+            if ((i<s.length()-2)&&(s.substring(i, i + 3).equals("is "))) {
                 thecount++;
+            }
+            else if((i==s.length()-2)&&(s.substring(i, i + 2).equals("is"))){
+                iscount++;
+                break;
             }
         }
 
