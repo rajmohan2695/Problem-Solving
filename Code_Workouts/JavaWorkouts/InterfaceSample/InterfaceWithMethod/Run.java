@@ -8,6 +8,7 @@ public class Run {
         Bike b = new Bike();
         process(c);
         process(b);
+        c.sound();
 
     }
 
