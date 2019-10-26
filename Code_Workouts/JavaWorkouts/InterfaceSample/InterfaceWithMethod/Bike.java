@@ -1,4 +1,4 @@
-package Code_Workouts.JavaWorkouts.InterfaceSample;
+package Code_Workouts.JavaWorkouts.InterfaceSample.InterfaceWithMethod;
 
 public class Bike implements Vehicle{
     @Override

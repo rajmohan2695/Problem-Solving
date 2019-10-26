@@ -1,6 +1,4 @@
-package Code_Workouts.JavaWorkouts.InterfaceSample;
-
-import org.w3c.dom.ls.LSOutput;
+package Code_Workouts.JavaWorkouts.InterfaceSample.InterfaceWithMethod;
 
 public class Run {
     public static void main(String[] args) {
