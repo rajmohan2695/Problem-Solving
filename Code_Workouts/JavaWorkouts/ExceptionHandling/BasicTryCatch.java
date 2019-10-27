@@ -15,3 +15,8 @@ public class BasicTryCatch {
         System.out.println(k);
     }
 }
+/*
+        java.lang.ArithmeticException: / by zero
+        Divide By Zero is not possible
+        0
+ */
