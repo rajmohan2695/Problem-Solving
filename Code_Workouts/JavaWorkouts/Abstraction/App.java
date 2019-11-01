@@ -17,3 +17,10 @@ public class App {
         n.methodB();
     }
 }
+/*
+        Printed from ClassB
+        Printed from CLassA(Abstract)
+        Inherited from abstract class
+        Printed from ClassC
+        Printed from CLassA(Abstract)
+ */
