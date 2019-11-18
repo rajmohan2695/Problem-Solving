@@ -96,6 +96,21 @@ i.removeChild(i.querySelector('div'));
 
 /*---------------------------------------------------------------*/
 
-
-
-
+//Checking whether a element has any child node or not
+var j = document.getElementById('two');
+if(i.hasChildNodes()){
+	console.log('true');
+}
+else{
+	console.log('false');
+}
+if(j.hasChildNodes()){
+	console.log('true');
+}
+else{
+	console.log('false');
+}
+/* Output
+	true
+	false
+*/
