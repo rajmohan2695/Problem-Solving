@@ -73,3 +73,17 @@ document.body.appendChild(f);
 
 /*---------------------------------------------------------------*/
 
+//Changing the CSS properties by using DOM manipulation
+var h = document.querySelector('div');
+h.style.background = 'black';
+h.style.color = 'white';
+
+/* Created HTML DOM is:
+	<div id="content" style="background: black; color: white;">
+		<!-- innerHTML vs innerText -->
+		Hi, This is <b> Awesome </b>
+	</div>
+*/
+
+/*---------------------------------------------------------------*/
+
