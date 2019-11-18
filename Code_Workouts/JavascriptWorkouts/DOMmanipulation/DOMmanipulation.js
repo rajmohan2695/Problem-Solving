@@ -87,3 +87,15 @@ h.style.color = 'white';
 
 /*---------------------------------------------------------------*/
 
+//Removing child element usign DOM manipulation
+var i = document.getElementById('one');
+i.removeChild(i.querySelector('div'));	
+
+//Deleted element in webpage using Parent - Child Relationship
+//Deleted the child div of the parent(id="one")
+
+/*---------------------------------------------------------------*/
+
+
+
+
