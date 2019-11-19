@@ -17,3 +17,5 @@ Datatypes
       - Datatype of a variable that does not contains a value
     - Null
       - Also means 'Non - Existent'
+  - JavaScript has 'Dynamic typing'
+    - i.e. Datatypes are automatically assigned to a variable 
