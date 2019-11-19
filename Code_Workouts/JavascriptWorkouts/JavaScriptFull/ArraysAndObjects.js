@@ -88,3 +88,25 @@ console.log(typeof(b));
 */
 
 /*---------------------------------------------------------------*/
+
+//Creating Object
+
+var a = {
+	obj1 : "Hello",
+	obj2 : "World",
+	obj3 : function(){					//Declaring function inside an object
+		return this.obj1+this.obj2;
+	}
+}
+
+console.log(a.obj1);					//Accessing a component inside the function
+console.log(a.obj2);
+console.log(a.obj3());					//Accessing the function inside object
+
+/*	Output:
+		Hello
+		World
+		HelloWorld
+*/
+
+/*---------------------------------------------------------------*/
