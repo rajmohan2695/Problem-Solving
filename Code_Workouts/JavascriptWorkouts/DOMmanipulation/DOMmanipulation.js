@@ -195,4 +195,43 @@ console.log(arr.sort(arrSort));
 
 /* Output
 	[1, 2, 3, 4, 5]
-*/	
+*/
+
+/*---------------------------------------------------------------*/
+
+//Manipulations inside arrays using methods in array
+
+var arr = [1,2,3,4,5,6,7,8,9,10];
+arr.shift();//deletes the first element
+console.log(arr);
+arr.unshift(1);//inserts the element in the first position
+console.log(arr);
+arr.pop(); //deletes the last element in the array
+console.log(arr);
+arr.push(10); //inserts at the end of the array
+arr[arr.length] = 10; //does the same like arr.push(10);
+console.log(arr);
+
+/* Output
+	[2, 3, 4, 5, 6, 7, 8, 9, 10]
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	[1, 2, 3, 4, 5, 6, 7, 8, 9]
+	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+*/
+
+/*---------------------------------------------------------------*/
+
+//Datatype initialization
+
+var a = "Hello";				// Take it as a String automatically
+console.log(typeof(a));
+
+var b = new String("Hello");	// Take is an object if we use 'new' kwyword
+console.log(typeof(b));
+
+/* Output
+	string
+	object
+*/
+
+/*---------------------------------------------------------------*/
