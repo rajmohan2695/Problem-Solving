@@ -43,7 +43,7 @@ console.log(d.innerText);
 
 /*---------------------------------------------------------------*/
 
-//document.querySelectorAll is used to get all the elements from the given element and keeo it in an object
+//document.querySelectorAll is used to get all the data from the given element and keeo it in an object
 var e = document.querySelectorAll('li');
 console.log(typeof(e));
 console.log(e);
@@ -55,6 +55,17 @@ console.log(e);
 
 /*---------------------------------------------------------------*/
 
+//Different ways of getting the data from an element
+var div1 = document.getElementById('helloworld').innerText;
+var div2 = document.querySelector('divv').innerText;
+var div3 = document.querySelectorAll('divv')[0].innerText;
+var div4 = document.getElementsByTagName('divv')[0].innerText;
+console.log(div1+" "+div2+" "+div3+" "+div4);
+/* Output
+	Hello World! Hello World! Hello World! Hello World!
+*/
+
+/*---------------------------------------------------------------*/
 //creating a tag and inputting the elements in it using DOM manipulation
 var f = document.createElement('div');
 var g = document.createTextNode('Hello World! I\'ve a working DOM');
