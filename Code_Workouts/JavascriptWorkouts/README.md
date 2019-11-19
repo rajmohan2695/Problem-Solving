@@ -5,7 +5,7 @@ Javascript
     - Client-side : Javascript is traditionally used only in serverside
     - Server-side : But now it is used in server-side as well (node.js)
 
-Datatypes
+Datatypes:
   - Primitive Datatypes
     - Number
       - Used to specify the floating point numbers, decimals and also integers
@@ -19,3 +19,4 @@ Datatypes
       - Also means 'Non - Existent'
   - JavaScript has 'Dynamic typing'
     - i.e. Datatypes are automatically assigned to a variable 
+    - Later if we change the value of the variable(from int to string), the datatype will get changed automatically
