@@ -164,3 +164,35 @@ console.log(arr);
 */
 
 /*---------------------------------------------------------------*/
+
+//using 'concat' method
+var arr = [1,2,3,4,5,6];
+var arr2 = [6,5,4,3,2,1];
+var final = arr.concat(arr2);
+console.log(final);
+/* Output
+	[1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2, 1]
+*/
+
+/*---------------------------------------------------------------*/
+
+//Sorting array elements
+var arr = ["Banana","Apple","Cat","Bat"];
+arr.sort();
+console.log(arr);
+
+/* Output:
+	["Apple", "Banana", "Bat", "Cat"]
+*/
+
+//Sorting array number elements
+function arrSort(a,b){
+	return a-b; //for descending order : b-a
+}
+var arr = [5,3,4,2,1];
+arr.sort(arrSort);
+console.log(arr.sort(arrSort));
+
+/* Output
+	[1, 2, 3, 4, 5]
+*/	
