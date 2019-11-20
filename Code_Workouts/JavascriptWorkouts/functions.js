@@ -1,4 +1,8 @@
 //functions
+
+//Anonymous Function
+console.log(func(1,2,function(a,b){return a*b;}));
+
 //function callbacks
 var x = function(callback){
 	console.log("Hello");
@@ -23,9 +27,19 @@ let doWhatEver = function(x,y){
 }
 
 let calc = function(x,y,callback){
-	return callback(x,y);
+	if(typeof callback === "function"){   //here typeof is used to check whether it is a function or some garbage value
+		return callback(x,y);
+	}
 }
 
 console.log(calc(5,5,add));
 
-//function callbacks - 3
+//function callbacks - 3 (Anonymous function for a callback function)
+let calc1 = function(x,y,callback){
+	if(typeof callback === "function"){
+		return callback(x,y);
+	}
+}
+console.log(calc1(2,3,function(a,b){
+	return 2*3;
+}));
