@@ -20,3 +20,10 @@ Datatypes:
   - JavaScript has 'Dynamic typing'
     - i.e. Datatypes are automatically assigned to a variable 
     - Later if we change the value of the variable(from int to string), the datatype will get changed automatically
+  - 'typeof'
+    - 'typeof' will return the type of the variable
+Functions:
+    - Anonymous function
+      - These functions does not have a function name
+'this' keyword:
+    - 'this' keyword refers the owner of the function

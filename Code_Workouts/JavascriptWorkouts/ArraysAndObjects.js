@@ -50,6 +50,31 @@ console.log(arr.sort(arrSort));
 	[1, 2, 3, 4, 5]
 */
 
+//Sorting Objects with respective to the keys present in it using anonymous function
+var myArr = [{
+	fruit : "banana",
+	id : 2
+},
+{
+	fruit : "apple",
+	id : 1
+},
+{
+	fruit : "orange",
+	id : 3
+}]
+
+myArr.sort(function(a,b){
+	if(a.fruit < b.fruit){			// for id(number), we can use 'return a.id - b.id;'
+		return -1;
+	}
+	else{
+		return 1;
+	}
+});
+
+console.log(myArr);
+
 /*---------------------------------------------------------------*/
 
 //Manipulations inside arrays using methods in array
