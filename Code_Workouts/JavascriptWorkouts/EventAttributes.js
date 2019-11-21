@@ -3,6 +3,7 @@
 function callFunc(e){
 	console.log(e.value);
 	console.log(e);
+	alert(e);		//In alert window "[object HTMLInputElement]""
 }
 
 /* Output
