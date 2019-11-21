@@ -135,3 +135,68 @@ console.log(a.obj3());					//Accessing the function inside object
 */
 
 /*---------------------------------------------------------------*/
+
+//Creating Objects using constructors
+
+var a = function(text){
+	this.url = text;			//used this keyword for constructor
+	this.send = () => {
+		return "Hello";
+	}
+}
+
+var k = new a("www.google.com");	//initializing the object with the help of constructor
+
+console.log(k.url);				//www.google.com
+console.log(k.send());			//Hello
+
+/*---------------------------------------------------------------*/
+
+//Instantiation Vs Singleton Approach
+
+//Single Approach
+var original = {
+	site : "www.google.com",
+	url : function() {
+		return "http://"+this.site;
+	}
+}
+
+console.log(original.url());		//	http://www.google.com
+
+var clone = original;
+
+clone.site = "www.yahoo.com";
+
+console.log(original.url());		//	http://www.yahoo.com
+
+//Instantiation
+function Greet(text){
+	this.greet = text;
+}
+
+var a = new Greet("Hi");
+var b = new Greet("Hello");
+
+console.log(a.greet);				// Hi
+console.log(b.greet);				// Hello
+
+/*---------------------------------------------------------------*/
+
+// private and public stuff in constructor
+
+function Greet(text){
+	var url = text;					// private variable
+	var printUrl = function(){		// private function
+		return url;
+	}
+
+	this.showUrl = printUrl();
+}
+
+var a = new Greet("wwww.google.com");
+console.log(a.url);				// Undefined
+console.log(a.printUrl);		// Undefined
+console.log(a.showUrl);			// www.google.com
+
+/*---------------------------------------------------------------*/
