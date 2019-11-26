@@ -3,6 +3,8 @@
 //Anonymous Function
 console.log(func(1,2,function(a,b){return a*b;}));
 
+/*---------------------------------------------------------------*/
+
 //function callbacks
 var x = function(callback){
 	console.log("Hello");
@@ -12,6 +14,8 @@ var x = function(callback){
 var y = function(){
 	console.log("Hi");
 }
+
+/*---------------------------------------------------------------*/
 
 //function callbacks - 2
 let add = function(x,y){
@@ -34,6 +38,8 @@ let calc = function(x,y,callback){
 
 console.log(calc(5,5,add));
 
+/*---------------------------------------------------------------*/
+
 //function callbacks - 3 (Anonymous function for a callback function)
 let calc1 = function(x,y,callback){
 	if(typeof callback === "function"){
@@ -43,3 +49,38 @@ let calc1 = function(x,y,callback){
 console.log(calc1(2,3,function(a,b){
 	return 2*3;
 }));
+
+/*---------------------------------------------------------------*/
+
+//passing functions with unsatisfied parameters
+function hello(a,b){
+	console.log(a+"  "+b);
+}
+
+hello();				//undefined  undefined
+
+hello(5,3,4,2,1);		//5  3
+
+hello(43);				//43  undefined
+
+hello("43 12");			//43 12 undefined
+
+function mul(a,b){
+    console.log(a*b);
+}
+
+mul(2,3);				//6
+
+mul();					// NaN
+
+mul(2);					// NaN
+
+mul([2]);				// NaN
+
+mul([2,3]);				// NaN
+
+mul({a:5,b:5});			// NaN
+
+mul('a','b');			// NaN
+
+/*---------------------------------------------------------------*/
