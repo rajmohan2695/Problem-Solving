@@ -6,6 +6,8 @@ var x = function(){
 	console.log(a);		//error : a is not defined
 x();
 
+/*---------------------------------------------------------------*/
+
 //Experiment 2 ( var Vs let )
 var x = function(){
 	if(true){
@@ -18,3 +20,31 @@ var x = function(){
 }
 	console.log(a);		//error : a is not defined
 x();
+
+/*---------------------------------------------------------------*/
+
+//Scoping - 'let'
+function g(){
+	let kk = 20;
+    if(true){
+		let kk = 30;
+		console.log(kk);		// 30
+	}
+	console.log(kk);			// 20
+}
+g();
+
+/*---------------------------------------------------------------*/
+
+//Scoping - 'var'
+function g(){
+	var kk = 20;
+    if(true){
+		var kk = 30;
+		console.log(kk);		// 30
+	}
+	console.log(kk);			// 30
+}
+g();
+
+/*---------------------------------------------------------------*/
