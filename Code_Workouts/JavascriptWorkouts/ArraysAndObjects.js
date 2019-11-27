@@ -191,7 +191,7 @@ function Greet(text){
 		return url;
 	}
 
-	this.showUrl = printUrl();
+	this.showUrl = printUrl();		// public variable
 }
 
 var a = new Greet("wwww.google.com");
