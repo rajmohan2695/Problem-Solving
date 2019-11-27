@@ -35,6 +35,8 @@ b();
 
 */
 
+/*---------------------------------------------------------------*/
+
 //Callback hell
 
 function start(){
@@ -66,6 +68,7 @@ start();
 
 */
 
+/*---------------------------------------------------------------*/
 
 var getIDs = new Promise((resolve,reject) =>{
 		setTimeout(() => {
@@ -113,3 +116,51 @@ return recipe2("Little John")
 .catch(error =>{
 	console.log(error);
 });
+
+/* Output
+	[121, 423, 121, 54]
+	121 : Fresh tomato Pizza
+	Green Sandwich : Little John
+*/
+
+/*---------------------------------------------------------------*/
+
+var getIDs = new Promise((resolve,reject) =>{
+		setTimeout(() => {
+			var id = [121,423,121,54];
+			resolve(id);
+},2500);
+});
+
+var getRecipe = id => {
+	return new Promise((resolve,reject) =>{
+		setTimeout(id => {
+		var recipe = {
+			title : "Fresh tomato Pizza",
+			Publisher : "Jonas Jonan"
+	};
+		resolve(`${id} : ${recipe.title}`);
+},2000,id)		
+});
+};
+
+var recipe2 = publisher =>{
+	return new Promise((resolve,reject) =>{
+		setTimeout(pub => {
+			var recipe2 = { title : "Green Sandwich"};
+				resolve(`${recipe2.title} : ${pub}`);
+},1500,publisher);
+});
+};
+
+	/*  Asyc/await  */
+async function execute(){
+	const a = await getIDs;
+	console.log(a);
+	const b = await getRecipe(a[1]);
+	console.log(b);
+	const c = await recipe2('Jonas John');
+	console.log(c);
+}
+
+execute();
