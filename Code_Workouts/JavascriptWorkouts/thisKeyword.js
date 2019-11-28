@@ -100,4 +100,23 @@ new Person('John').myFriends(friends);
 	["John is the friend of Ram", "John is the friend of Keshav", "John is the friend of Ragu"]
 */
 
+
+//Using Arrow function
+function Person(name){
+	this.name = name;
+}
+
+Person.prototype.myFriends = function(friends){
+	var arr = friends.map(el => `${this.name} is the friend of ${el}`);
+	console.log(arr);
+}
+
+friends = ["Ram","Keshav","Ragu"];
+
+new Person('John').myFriends(friends);
+
+/* Output
+	["John is the friend of Ram", "John is the friend of Keshav", "John is the friend of Ragu"]
+*/
+
 /*---------------------------------------------------------------*/
