@@ -84,3 +84,12 @@ mul({a:5,b:5});			// NaN
 mul('a','b');			// NaN
 
 /*---------------------------------------------------------------*/
+
+//Converting an object into an array
+function Age(){
+var arr = Array.prototype.slice.call(arguments);
+	console.log(arguments);
+	arr.forEach(e => console.log(e>3));
+}
+Age(1,2,3,4);
+/////////////////////////
