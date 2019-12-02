@@ -39,3 +39,16 @@ console.log(Number(null));			// 0
 console.log(Number(undefined));		// NaN
 
 /*---------------------------------------------------------------*/
+
+//Boolean Conversions
+console.log(Boolean(0));			// false
+console.log(Boolean(1));			// true
+console.log(Boolean("true"));		// true
+console.log(Boolean("false"));		// true
+console.log(Boolean(12));			// true
+console.log(Boolean(""));			// false
+console.log(Boolean(" "));			// true
+console.log(Boolean(null));			// false
+console.log(Boolean(undefined));	// false
+
+/*---------------------------------------------------------------*/
