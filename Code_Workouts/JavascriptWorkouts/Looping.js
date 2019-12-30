@@ -91,3 +91,36 @@ do{
 */
 
 /*---------------------------------------------------------------*/
+
+//Looping through the object inside an object
+
+var myObj = {
+	"name":"John",
+	"age":30,
+	"cars": {
+	  "car1":"Ford",
+	  "car2":"BMW",
+	  "car3":"Fiat"
+	}
+   }
+
+   for(var x in myObj){
+	   if(typeof myObj[x] != 'object'){
+		   console.log(x+" : "+myObj[x])
+	   }
+	   else{
+		   for(var y in myObj[x]){
+			   console.log(x+" : "+y+" : "+myObj[x][y]);
+		   }
+	   }
+   }
+
+   /* Output
+   	  	name : John
+		age : 30
+		cars : car1 : Ford
+		cars : car2 : BMW
+		cars : car3 : Fiat
+	*/
+
+/*---------------------------------------------------------------*/

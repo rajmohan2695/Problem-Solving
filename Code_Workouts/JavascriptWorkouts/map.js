@@ -32,7 +32,18 @@ map1.delete('Hi')
 map1.forEach((value,key) => {
     console.log(`Key is ${key} and the value is ${value}`);
 })
+
+for(let i of map1.entries()){
+    console.log(i);
+}
+
+for(let [key,value] of map1.entries()){
+    console.log(key,value);
+}
+
+map1.has(1);    // true
 map1.clear();
+map1.has(1);    // false
 map1.get(1);
 
 /*
@@ -46,4 +57,13 @@ Key is Hi and the value is Hello
 12 Key is 2 and the value is 3
 12 Key is 3 and the value is 4
 undefined
+
+[1, 2]
+[2, 3]
+[3, 4]
+
+1 2
+2 3
+3 4
+
 */
