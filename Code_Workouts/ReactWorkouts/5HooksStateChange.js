@@ -63,7 +63,7 @@ const Person = props=> {
 
 export default Person;
 
-// 2. Passing method references between the components
+// 2. Passing method references between the components inside a function
 
 // App.js
 import React,{useState} from 'react';
@@ -113,6 +113,70 @@ const App = () => {
 }
 
 export default App;
+
+// Person/Person.js
+import React from 'react';
+
+const Person = props=> {
+    return (
+        <div>
+            <h3 onClick={props.click}>Hi, This is {props.name} and my age is {props.age}</h3>
+        </div>
+    );
+}
+
+export default Person;
+
+// 3.Passing method reference between the component in class with parameter
+
+//App.js
+import React,{Component} from 'react';
+import Person from './Person/Person';
+import './App.css';
+
+class App extends Component{
+    state = {
+        person:[
+          {
+            name:"Raj Mohan",
+            age:"23"
+          },
+          {
+            name:"Ragul",
+            age:"21"
+          }
+        ],
+        others : "Hello"
+      };
+
+    
+      changeState = (newValue = "Call") => {
+        this.setState(
+          {
+            person:[{
+              name:"Raj Mohan jayakumar",
+              age:"11"
+            },
+            {
+              name:newValue,
+              age:"21"
+            }]
+          }
+        );
+      }
+    
+      render(){
+        return (
+          <div className="App">
+            <button onClick={()=>this.changeState()}>Change State</button>
+            <Person click={this.changeState.bind(this,"Maxi!")} name={this.state.person[0].name} age={this.state.person[0].age} />
+            <Person name={this.state.person[1].name} age={this.state.person[1].age} />
+          </div>
+        );
+      }
+    }
+    
+    export default App;
 
 // Person/Person.js
 import React from 'react';
