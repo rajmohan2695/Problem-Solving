@@ -244,9 +244,20 @@ class App extends Component{
 }
 
   render(){
+
+    // Adding inline style
+    const style = {
+        backgroundColor: 'burlywood',
+        borderColor: 'blue',
+        padding: '8px',
+        borderRadius: '20%',
+        cursor:'pointer',
+        marginTop:'20px'
+      }
+
     return (
       <div className="App">
-        <button onClick={()=>this.changeState()}>Change State</button>
+        <button style={style} onClick={()=>this.changeState()}>Change State</button>
         <Person click={this.changeState.bind(this,"Maxi!")} 
         changed={this.changeHandler} 
         name={this.state.person[0].name} 
