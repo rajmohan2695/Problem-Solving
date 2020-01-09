@@ -191,7 +191,7 @@ const Person = props=> {
 
 export default Person;
 
-//Chaning the value dynamically using onChange
+//Chaning the value dynamically using onChange and also added style to the component
 
 //App.js
 import React,{Component} from 'react';
@@ -262,6 +262,7 @@ export default App;
 
 // Person/Person.js
 import React from 'react';
+import './Person.css'
 
 const Person = props => {
     return (
@@ -273,3 +274,14 @@ const Person = props => {
 }
 
 export default Person;
+
+// Person/Person.css
+.Person{
+    margin:auto;
+    margin-top: 30px;
+    width : 60%;
+    border : 1px solid black;
+    box-shadow: 0 2px 3px grey;
+    padding : 5px;
+    text-align: center;
+}
