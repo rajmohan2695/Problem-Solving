@@ -190,3 +190,86 @@ const Person = props=> {
 }
 
 export default Person;
+
+//Chaning the value dynamically using onChange
+
+//App.js
+import React,{Component} from 'react';
+import Person from './Person/Person';
+import './App.css';
+
+class App extends Component{
+
+  state = {
+    person:[
+      {
+        name:"Raj Mohan",
+        age:"23"
+      },
+      {
+        name:"Ragul",
+        age:"21"
+      }
+    ],
+    others : "Hello"
+  };
+
+  changeState = (newValue = "Call") => {
+    this.setState(
+      {
+        person:[{
+          name:"Raj Mohan",
+          age:"11"
+        },
+        {
+          name:newValue,
+          age:"21"
+        }]
+      }
+    );
+  }
+
+  changeHandler = (event) => {
+    this.setState({
+      person:[{
+          name:event.target.value,
+          age:"11"
+        },
+        {
+          name:"Raj Mohan jayakumar",
+          age:"21"
+        }]
+      }
+    );
+}
+
+  render(){
+    return (
+      <div className="App">
+        <button onClick={()=>this.changeState()}>Change State</button>
+        <Person click={this.changeState.bind(this,"Maxi!")} 
+        changed={this.changeHandler} 
+        name={this.state.person[0].name} 
+        age={this.state.person[0].age}
+        value={this.state.person[0].name} />
+        <Person name={this.state.person[1].name} age={this.state.person[1].age} />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+// Person/Person.js
+import React from 'react';
+
+const Person = props => {
+    return (
+        <div>
+            <input type="text" onChange={props.changed} value={props.value}/>
+            <h3 onClick={props.click}>Hi, This is {props.name} and my age is {props.age}</h3>
+        </div>
+    );
+}
+
+export default Person;
