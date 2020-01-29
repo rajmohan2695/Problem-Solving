@@ -26,7 +26,7 @@ public class CommandLineEncryption {
             ProcessBuilder builder = new ProcessBuilder(
                     "cmd.exe", "/c", cmd);
             builder.start();
-            System.out.println("The file is encrypted and saved in desktop");
+            System.out.println("The file is decrypted and saved in desktop");
     }
 }
 
@@ -44,6 +44,6 @@ public class CommandLineEncryption {
         Enter the path of the file to decrypt
         D:/staging.properties.encrypted
         Suggest a name for the decrypted file
-        faadf
-        The file is encrypted and saved in desktop
+        DecryptFileOne
+        The file is decrypted and saved in desktop
 */
