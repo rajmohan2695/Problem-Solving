@@ -72,10 +72,10 @@ public class CommandLineDecryptionGoogleKMS {
         DecryptFileOne
         The file is decrypted and saved in desktop
         Here are the decrypted information from the file
-        FULLSTORAGE_SIGNKEY has RrFIMxbZxEzY0sq1Kz89QpBYTQllOg9J
-        FULLAUTH_DEVCONSOLE_APIKEY has wN4hMuO.NJocuLD6z0TgEEB7MHCn1Khua6eLkgkH
-        FULLSTORAGE_API_KEY has ZoSw20N.IpnO1HazffEATjeGd2Cd4lXj9j799kh1
-        FULLAUTH_APP_ID has f185790b1f7dedb532d1770de0e170afb274f54f
-        FULLAUTH_CLIENT_ID has bf60d-939a41b5a49c306e70ac
-        FULLAUTH_CLIENT_SECRET has xFB5ujcx7tExkjmj3-VQicLe8uIDnFLyZfpkH07x
+        FULLSTORAGE_SIGNKEY has nKjnKjnjJbkjBkjBkjBKmoojhjgiu
+        FULLAUTH_DEVCONSOLE_APIKEY has hHbJBIBHBHBJBKJBkijzvVJzkjKJbzKJkJkjB
+        FULLSTORAGE_API_KEY has okjokjnjJJbkJbkJBJBkJbkJBkjbkJBkjjbbj
+        FULLAUTH_APP_ID has KJNkjNKjKjkjbijbijoyuuvuyvIJbij
+        FULLAUTH_CLIENT_ID has JkjbkjbkKJbkjbkjbkjknij
+        FULLAUTH_CLIENT_SECRET has nkjhbJBIKJBkJBkjKhIHbkJBkJnLKNoIubuyfyt67
 */
