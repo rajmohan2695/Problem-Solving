@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation</title>
+</head>
+<body>
+	<div id="content">
+		<!-- innerHTML vs innerText -->
+		Hi, This is <b> Awesome </b>
+	</div>
+
+	<ul>
+		<li class="a">Content 1</li>
+		<li class="a">Content 2</li>
+		<li class="a">Content 3</li>
+		<li class="a">Content 4</li>
+		<li class="a">Content 5</li>
+	</ul>
+
+	<div id="one">
+		<span>Hello Span</span>
+		<div>Hello Div</div>
+		<div id="two"></div>
+	</div>
+	<divv id="helloworld">Hello World!</divv>
+	<!-- <script src="C:\Users\user.FULL310-WIN.000.001.002.003\eclipse-workspace\PhonebookPro\src\main\webapp\script.js" type="text/javascript"></script> -->
+	<script type="text/javascript">
+		document.querySelector('ul').addEventListener('click',function(e){
+	console.log(e.target.innerHTML);
+})
+	</script>
+</body>
+</html>
