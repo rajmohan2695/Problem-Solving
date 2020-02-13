@@ -164,3 +164,20 @@ async function execute(){
 }
 
 execute();
+
+/*---------------------------------------------------------------*/
+
+//Promise inside a promise
+
+var promise1 = new Promise((resolve,reject) => {
+    var k = 10;
+    resolve(new Promise((resolve,reject) => {
+        resolve(k+10);        
+}))
+});
+
+promise1.then(res => {
+    console.log(res);		//  10
+});
+
+/*---------------------------------------------------------------*/
