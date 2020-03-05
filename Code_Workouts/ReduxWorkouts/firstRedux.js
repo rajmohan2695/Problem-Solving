@@ -32,8 +32,6 @@ const counter = (state = 0, action ) => {
 `<!DOCTYPE html>
 <html>
 <head>
-  <meta name="description" content="ES6 in Action: New String Methods [3]">
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.js" type="text/javascript"></script>
   <title>ES6 in Action: New String Methods</title>
@@ -42,3 +40,5 @@ const counter = (state = 0, action ) => {
 
 </body>
 </html>`
+
+// reference : https://egghead.io/lessons/react-redux-store-methods-getstate-dispatch-and-subscribe
