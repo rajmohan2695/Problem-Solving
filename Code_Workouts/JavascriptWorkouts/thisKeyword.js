@@ -152,6 +152,21 @@ console.log(johnsRoom.table) 	// 'John\'s table'
 
 /*---------------------------------------------------------------*/
 
+// Inside Object vs Outer scope of an object
+
+let props = 20;
+
+const test = {
+	props : 30,
+	func : function(){
+		console.log(this.props + " " +props)	// 30 20
+	}
+}
+
+test.func();
+
+/*---------------------------------------------------------------*/
+
 // Inside a method
 
 let johnsRoom = {
