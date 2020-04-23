@@ -120,3 +120,187 @@ new Person('John').myFriends(friends);
 */
 
 /*---------------------------------------------------------------*/
+
+/* ################################################################################################## */
+
+										/* Second Run */
+
+/* ################################################################################################## */
+
+// Global Scope
+
+this.table = 'John\'s table';
+console.log(window.table);		// 'John\'s table'
+console.log(this.table);		// 'John\'s table'
+
+this.garage = {
+    table:'Garage\'s table'
+}
+
+console.log(this.garage.table)     // "Garage's table"
+console.log(window.garage.table)   // "Garage's table"
+
+/*---------------------------------------------------------------*/
+
+// Inside an Object
+
+let johnsRoom = {
+	table : 'John\'s table'
+}
+
+console.log(johnsRoom.table) 	// 'John\'s table'
+
+/*---------------------------------------------------------------*/
+
+// Inside a method
+
+let johnsRoom = {
+	table : 'John\'s table',
+	cleanTable(){
+		console.log(`Cleaning ${this.table}`)		
+	}
+}
+
+johnsRoom.cleanTable(); 	// Cleaning John's table
+
+/*---------------------------------------------------------------*/
+
+// Inside a function
+
+this.table = 'John\'s table';
+const cleanTable = function(){
+    console.log(`Cleaning ${this.table}`)
+}
+cleanTable();		// Cleaning John's table
+
+'use strict'		// Using 'use strict' for the same above function
+this.table = 'John\'s table';
+const cleanTable = function(){
+    console.log(`Cleaning ${this.table}`)
+}
+cleanTable();
+
+/* Output : Error
+	Uncaught TypeError: Cannot read property 'table' of undefined
+    at cleanTable1 (<anonymous>:3:34)
+    at <anonymous>:1:1
+*/
+
+// Because inside a function you should not give access to this/window object
+
+/*---------------------------------------------------------------*/
+
+// Call function for the rescue
+
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(){
+    console.log(`Cleaning ${this.table}`)
+}
+
+cleanTable.call(this) 		// Cleaning John's table
+
+
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(soap){
+    console.log(`Cleaning ${this.table} using ${soap} soap`)
+}
+
+cleanTable.call(this,'Surf') // Cleaning John's table using Surf soap
+
+/*---------------------------------------------------------------*/
+
+// Inside an inner function
+
+// Method.1 : Supplying this to the inner funciton using a variable
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(soap){
+
+	let that = this;
+	const innerFunction = function(_soap){
+	console.log(`Cleaning ${that.table} using ${_soap} soap`)
+	}
+	innerFunction(soap);
+}
+
+cleanTable.call(this,'Surf')	// Cleaning John's table using Surf soap
+
+// Method.2 : Using one more call inside a function
+
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(soap){
+
+	const innerFunction = function(_soap){
+	console.log(`Cleaning ${this.table} using ${_soap} soap`)
+	}
+	innerFunction.call(this,soap);
+}
+
+cleanTable.call(this,'Surf')	// Cleaning John's table using Surf soap
+
+// Method.3 : Using bind which binds and create a new function
+
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(soap){
+
+	const innerFunction = function(_soap){
+	console.log(`Cleaning ${this.table} using ${_soap} soap`)
+	}
+	innerFunction.bind(this)(soap);
+}
+
+cleanTable.call(this,'Surf')	// Cleaning John's table using Surf soap
+
+// Method.4 : Arrow function use the this from the outer function
+
+'use strict'
+this.table = "John\'s table"
+const cleanTable = function(soap){
+
+	const innerFunction = (_soap) => {
+	console.log(`Cleaning ${this.table} using ${_soap} soap`)
+	}
+	innerFunction(soap);
+}
+
+cleanTable.call(this,'Surf')	// Cleaning John's table using Surf soap
+
+/*---------------------------------------------------------------*/
+
+// Inside a constructor - using prototype 
+
+function createRoom(name){
+	this.table = `${name}'s table`
+}
+
+ let johnsRoom = new createRoom('John');
+
+createRoom.prototype.cleanTable = function(soap){
+	console.log(`Cleaning ${this.table} using ${soap} soap`)
+}
+
+johnsRoom.cleanTable('Surf')	// Cleaning John's table using Surf soap
+
+/*---------------------------------------------------------------*/
+
+// Inside a class
+
+class createRoom {
+	constructor(name){
+		this.table = `${name}'s table`
+	}
+
+	cleanTable(soap) {				// functions inside class are treated as prototype
+		console.log(`Cleaning ${this.table} using ${soap} soap`)
+	}
+}
+
+let johnsRoom = new createRoom("John");
+
+johnsRoom.cleanTable('Ariel');		// Cleaning John's table using Ariel soap
+
+/*---------------------------------------------------------------*/
