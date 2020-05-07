@@ -12,7 +12,7 @@ render(){
 
   /* 
   <div className="App">
-      <h1>Hello People!</h1>
+      <h1>Hello People!</h1>    // This is javascript at the end like the same as the return statement
     </div>
   */
 
