@@ -1,5 +1,6 @@
 // Using state inside a class
 
+class SomeClass extends Component {
 state={
     person : [
         {
@@ -36,4 +37,5 @@ render() {
       <Person name={this.state.person[1].name} age={this.state.person[1].age}/>
     </div>
   );
+}
 }
