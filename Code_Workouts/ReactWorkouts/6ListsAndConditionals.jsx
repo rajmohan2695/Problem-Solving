@@ -90,7 +90,8 @@ class App extends Component{
                 <PersonCard 
                 name={person.name} 
                 age={person.age} 
-                key={person.id} changed={(event) => this.changeHandler(event, personIndex)} 
+                key={person.id} 
+                changed={(event) => this.changeHandler(event, personIndex)} 
                 value={person.name}
                 click={(event) => this.deleteRecord(event,personIndex)}/>
               )}
