@@ -1,10 +1,5 @@
 
 // Leetcode 160. Intersection of Two Linked Lists EY
-package Problem_Solving;
-
-import Data_Structures_And_Algorithms.LinkedList.SinglyLinkedList.Node;
-
-import java.util.HashSet;
 
 /*
 
@@ -24,7 +19,14 @@ import java.util.HashSet;
     Your code should preferably run in O(n) time and use only O(1) memory.
 * */
 
-class Solution {
+package Problem_Solving;
+
+import Data_Structures_And_Algorithms.LinkedList.SinglyLinkedList.Node;
+
+import java.util.HashSet;
+
+
+class IntersectionOfTwoLinkedListsEY {
     public Node getIntersectionNode(Node headA, Node headB) {
 
         HashSet<Node> firstList = new HashSet<>();
