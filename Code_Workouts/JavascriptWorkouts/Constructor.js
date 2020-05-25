@@ -57,3 +57,13 @@ for(let dog of dogs){
 }
 
 /*---------------------------------------------------------------*/
+
+// Instance of Object literal
+
+let a = {
+    one : 'hi'
+}
+
+console.log(a instanceof Object) // true
+
+/*---------------------------------------------------------------*/
