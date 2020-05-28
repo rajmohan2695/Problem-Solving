@@ -17,13 +17,19 @@ var newElements = elements.map(ele =>{
 
 console.log(newElements);   // [2, 3, 4, 5, 6]
 
-//MAPS in ES6
+//MAPS in Javascript ( Key - Value Pairs)
 
 var map1 = new Map();
 map1.set('Hi','Hello');
 map1.set(1,2);
 map1.set(2,3);
 map1.set(3,4);
+
+// The above code can be return as :
+
+var map2 = new Map();
+map2.set('Hi','Hello').set(1,2).set(2,3).set(3,4);
+
 console.log(map1.get('Hi'));
 map1.forEach((value,key) => {
     console.log(`Key is ${key} and the value is ${value}`);
