@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Infinite Scroll</title>
+        <style>
+            #infinite-scroll{
+                width: 200px;
+                height: 300px;
+                overflow: auto;
+
+                margin : 30px;
+                padding : 20px;
+                border: 10px solid;
+            }
+            
+            #headerTitle{
+                margin: 40px;
+                padding : 10px;
+                border : 2px solid green;
+                width : 200px;
+            }
+
+            #toTop{
+                margin-left:100px;
+                padding: 10px;
+                color:azure;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="headerTitle">Infinite Scroll</h1>
+        <ul id="infinite-scroll"></ul>
+
+        <div>
+            <button id="toTop">Go to Top</button>
+            <!-- <button id="toBottom">Go to Bottom</button> -->
+        </div>
+        
+
+        <script>
+            let listItem = document.getElementById('infinite-scroll');
+            let nextItem = 1;
+            const addLists = () => {
+                    for(let i = 0; i < 20;i++){
+                    let newItem = document.createElement('li');
+                    newItem.innerText = `List ${nextItem++}`;
+                    listItem.appendChild(newItem);
+                }
+            }
+
+            listItem.addEventListener('scroll', ()=> {
+                if(listItem.scrollTop + listItem.clientHeight >= listItem.scrollHeight){
+                    addLists();
+                }
+            })
+
+            addLists();     // For initial loading
+
+            let topBotton = document.getElementById('toTop');
+
+            topBotton.addEventListener('click', ()=>{
+                listItem.scrollTop = 0;
+            })
+
+            // document.getElementById('toBottom').addEventListener('click', ()=>{
+            //     listItem.scroll = listItem.scrollHeight;
+            // })
+
+        </script>
+    </body>
+</html>
