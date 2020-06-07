@@ -49,7 +49,8 @@
                 console.log("Loading More...")
                 for(let i = 0; i < 12; i++){
                     let imageTag = document.createElement('img');
-                    imageTag.setAttribute('src',`http://api.adorable.io/avatars/${Math.round(Math.random()*1000000)}`);
+                    // imageTag.setAttribute('src',`http://api.adorable.io/avatars/${Math.round(Math.random()*1000000)}`);
+                    imageTag.setAttribute('src',`http://picsum.photos/600?t=${new Date().getTime()+i}`);
                     imageTag.setAttribute('id','imageLiId')
                     let imageLi = document.createElement('li');
                     imageLi.appendChild(imageTag);
