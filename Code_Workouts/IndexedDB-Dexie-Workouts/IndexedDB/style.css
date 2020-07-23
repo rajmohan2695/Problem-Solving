@@ -1,0 +1,17 @@
+.input-tag input {
+    margin-bottom: 10px;
+}
+
+.cursor-highlight {
+    
+}
+
+.btnedit {
+    cursor: pointer;
+    color:olivedrab;
+}
+
+.btndelete {
+    cursor: pointer;
+    color:tomato;
+}
