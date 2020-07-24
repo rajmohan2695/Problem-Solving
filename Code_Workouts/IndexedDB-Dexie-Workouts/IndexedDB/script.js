@@ -11,6 +11,20 @@ let contacts = [{
     email:'rajmohan2695@xyz.com'
 }];
 
+//Input tags
+const name = document.getElementById('name');
+const phoneNumber = document.getElementById('phoneNumber');
+const email = document.getElementById('email');
+
+//Buttons
+const btnCreate = document.getElementById('create');
+const btnRead = document.getElementById('read');
+const btnUpdate = document.getElementById('update');
+const btnDelete = document.getElementById('delete');
+
+//table
+const recordTable = document.getElementById('record');
+
 let updateId;
 
 (function(){
@@ -39,18 +53,17 @@ function sortContacts(){
 }
 
 function createContact(){
-    if(updateId){ return; }
-    const contact = getInputValues();
-    if(!contact.name) { return; }
-    contacts.push({id:getRandomString(), ...contact});
+    const contactName = name.value.trim();
+    if(updateId || !contactName){ return; }
+    contacts.push({id:getRandomString(), name : name.value, phoneNumber : phoneNumber.value, email : email.value});
     makeInputSpaceEmpty();
     populateContact();
 }
 
 function populateContact(){
-    document.getElementById('record').innerHTML = null;
-    const contactsHTML = contacts.forEach( (contact, index) => {
-        document.getElementById('record').innerHTML +=  contactTemplate(contact,index+1)
+    recordTable.innerHTML = null;
+    contacts.forEach( (contact, index) => {
+        recordTable.innerHTML +=  contactTemplate(contact,index+1)
     })
 }
 
@@ -83,9 +96,9 @@ function editContact(node){
     const contactId = node.parentNode.parentElement.dataset["contactid"];
     for(let contact of contacts){
         if(contact.id == contactId){
-            document.getElementById('name').value = contact.name;
-            document.getElementById('phoneNumber').value = contact.phoneNumber;
-            document.getElementById('email').value = contact.email;
+            name.value = contact.name;
+            phoneNumber.value = contact.phoneNumber;
+            email.value = contact.email;
             updateId = contactId;
             return;
         }
@@ -108,7 +121,7 @@ function updateContact(){
     if(!updateId){ return; }
     contacts = contacts.map(contact => {
         if(contact.id == updateId){
-            return { id:updateId, ...getInputValues() }
+            return { id:updateId, name : name.value, phoneNumber : phoneNumber.value, email : email.value }
         }
         return contact;
     });
@@ -116,18 +129,10 @@ function updateContact(){
     populateContact();
 }
 
-function getInputValues(){
-    return {
-        name : document.getElementById('name').value.trim(),
-        phoneNumber : document.getElementById('phoneNumber').value,
-        email : document.getElementById('email').value,
-    }
-}
-
 function makeInputSpaceEmpty(){
-    document.getElementById('name').value = null;
-    document.getElementById('phoneNumber').value = null;
-    document.getElementById('email').value = null;
+    name.value = null;
+    phoneNumber.value = null;
+    email.value = null;
 }
 
 function getRandomString(){
