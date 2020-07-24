@@ -18,12 +18,31 @@ let updateId;
 })();
 
 document.getElementById('read').addEventListener('click', () => {
+    sortContacts();
     populateContact();
 });
 
+function compare(a,b){
+    if(a.name < b.name){
+        return -1;
+    }
+    if(a.name > b.name){
+        return 1;
+    }
+    return 0;
+}
+
+function sortContacts(){
+    contacts.sort(compare);
+    // Can be written as below
+    // contacts.sort((a,b) => a.name > b.name ? (a.name < b.name ? 1 : 0) : -1)
+}
+
 function createContact(){
     if(updateId){ return; }
-    contacts.push({id:getRandomString(), ...getInputValues()});
+    const contact = getInputValues();
+    if(!contact.name) { return; }
+    contacts.push({id:getRandomString(), ...contact});
     makeInputSpaceEmpty();
     populateContact();
 }
@@ -99,7 +118,7 @@ function updateContact(){
 
 function getInputValues(){
     return {
-        name : document.getElementById('name').value,
+        name : document.getElementById('name').value.trim(),
         phoneNumber : document.getElementById('phoneNumber').value,
         email : document.getElementById('email').value,
     }
@@ -109,12 +128,6 @@ function makeInputSpaceEmpty(){
     document.getElementById('name').value = null;
     document.getElementById('phoneNumber').value = null;
     document.getElementById('email').value = null;
-}
-
-function findIndex(id){
-    return contacts.forEach((contact, index) => {
-        if(contact.id == id) { return id }
-    })
 }
 
 function getRandomString(){
