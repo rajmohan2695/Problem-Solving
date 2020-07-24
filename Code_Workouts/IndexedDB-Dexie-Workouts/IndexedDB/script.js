@@ -1,3 +1,8 @@
+
+let db = createDb('Raju', {
+    rajuTb: `id, name, phoneNumber, email`
+});
+
 let contacts = [{
     id:'sdgsd',
     name:'Raj Mohan',
@@ -28,13 +33,20 @@ const recordTable = document.getElementById('record');
 let updateId;
 
 (function(){
+    // db.rajuTb.bulkAdd(contacts);
     populateContact();
 })();
 
-document.getElementById('read').addEventListener('click', () => {
+btnRead.onclick = () => {
     sortContacts();
     populateContact();
-});
+}
+
+btnCreate.onclick = async () => {
+    if(!name.value) { return; }
+    await db.rajuTb.add({id:getRandomString(), name : name.value, phoneNumber : phoneNumber.value, email : email.value});
+    populateContact();
+}
 
 function compare(a,b){
     if(a.name < b.name){
@@ -52,24 +64,29 @@ function sortContacts(){
     // contacts.sort((a,b) => a.name > b.name ? (a.name < b.name ? 1 : 0) : -1)
 }
 
-function createContact(){
-    const contactName = name.value.trim();
-    if(updateId || !contactName){ return; }
-    contacts.push({id:getRandomString(), name : name.value, phoneNumber : phoneNumber.value, email : email.value});
-    makeInputSpaceEmpty();
-    populateContact();
-}
-
-function populateContact(){
+async function populateContact(){
     recordTable.innerHTML = null;
-    contacts.forEach( (contact, index) => {
+    let objTable = await db.rajuTb.toArray();
+    objTable.forEach( (contact, index) => {
         recordTable.innerHTML +=  contactTemplate(contact,index+1)
     })
 }
 
+const editContact = async (contactId) => {
+    // const contactId = node.parentNode.parentElement.dataset["contactid"];
+    const contact = await db.rajuTb.get(contactId);
+        if(contact){
+            name.value = contact.name;
+            phoneNumber.value = contact.phoneNumber;
+            email.value = contact.email;
+            updateId = contactId;
+            return;
+        }
+}
+
 function contactTemplate(contact,index){
     return `
-    <div class="row" data-contactId='${contact.id}'>
+    <div class="row contactRow" data-contactId='${contact.id}'>
         <div class="col">
             <h5>${index}</h5>
         </div>
@@ -83,49 +100,35 @@ function contactTemplate(contact,index){
             <h5>${contact.email}</h5>
         </div>
         <div class="col">
-            <i onclick='editContact(this);' class="fas fa-user-edit btnedit"></i>
+            <i onclick=editContact("${contact.id}") class="fas fa-user-edit btnedit"></i>
         </div>
         <div class="col">
-            <i onclick='deleteContact(this);' class="fas fa-trash btndelete"></i>
+            <i onclick='deleteContact("${contact.id}");' id="delete" class="fas fa-trash btndelete"></i>
         </div>
     </div>
 </div>`
 }
 
-function editContact(node){
-    const contactId = node.parentNode.parentElement.dataset["contactid"];
-    for(let contact of contacts){
-        if(contact.id == contactId){
-            name.value = contact.name;
-            phoneNumber.value = contact.phoneNumber;
-            email.value = contact.email;
-            updateId = contactId;
-            return;
-        }
-    }
-}
-
-function deleteContact(node){
-    const contactId = node.parentNode.parentElement.dataset["contactid"];
-    contacts = contacts.filter(contact => contact.id != contactId);
+async function deleteContact(contactId){
+    await db.rajuTb.delete(contactId);
     populateContact();
 }
+
+document.getElementById('deleteAll').addEventListener('click', async ()=>{
+    await db.rajuTb.clear();
+    populateContact();
+});
+
+document.getElementById('update').addEventListener('click', () => {
+    if(!updateId){ return; }
+    db.rajuTb.put({ id:updateId, name : name.value, phoneNumber : phoneNumber.value, email : email.value })
+    makeInputSpaceEmpty();
+    populateContact();
+})
 
 function deleteAll(){
     contacts = [];
     updateId = undefined;
-    populateContact();
-}
-
-function updateContact(){
-    if(!updateId){ return; }
-    contacts = contacts.map(contact => {
-        if(contact.id == updateId){
-            return { id:updateId, name : name.value, phoneNumber : phoneNumber.value, email : email.value }
-        }
-        return contact;
-    });
-    makeInputSpaceEmpty();
     populateContact();
 }
 
