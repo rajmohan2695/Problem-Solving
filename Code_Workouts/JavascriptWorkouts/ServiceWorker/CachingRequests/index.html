@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Caching Fetch</title>
+    </head>
+    <body>
+        <input type="text" id="input-url" />
+        <button id='get-image'>Get Image</button>
+        <img id="image-preview" />
+
+        <script>
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('sw.js')
+                    .catch(console.error)
+            }
+        </script>
+        <script rel="javascript/text" src="./scripts/scripts.js" ></script>
+    </body>
+</html>
