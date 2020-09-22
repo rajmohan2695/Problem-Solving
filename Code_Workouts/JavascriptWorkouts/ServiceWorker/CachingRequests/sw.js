@@ -1,4 +1,4 @@
-const cacheVersion = 'v4';
+const cacheVersion = 'v2Pictures';
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -21,6 +21,7 @@ self.addEventListener('activate', (event) => {
     )})
 
     self.addEventListener('fetch', (event) => {
+        if(!event.request.url.includes('http://picsum.photos/600')) { return event.respondWith(fetch(event.request))}
         console.log(event.request)
             event.respondWith(
                 caches.match(event.request)
