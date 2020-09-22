@@ -46,6 +46,7 @@ btnCreate.onclick = async () => {
     if(!name.value) { return; }
     await db.rajuTb.add({id:getRandomString(), name : name.value, phoneNumber : phoneNumber.value, email : email.value});
     populateContact();
+    makeInputSpaceEmpty();
 }
 
 function compare(a,b){
@@ -67,7 +68,7 @@ function sortContacts(){
 async function populateContact(){
     recordTable.innerHTML = null;
     let objTable = await db.rajuTb.toArray();
-    objTable.forEach( (contact, index) => {
+    objTable.sort(compare).forEach( (contact, index) => {
         recordTable.innerHTML +=  contactTemplate(contact,index+1)
     })
 }
