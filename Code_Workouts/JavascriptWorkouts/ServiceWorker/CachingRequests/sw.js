@@ -33,7 +33,11 @@ self.addEventListener('activate', (event) => {
                     return fetch(event.request)
                             .then(res => {
                                 return caches.open(cacheVersion)
-                                    .then(cache => cache.put(event.request, res.clone()))
+                                    .then(cache => {
+                                        const response = res.clone();
+                                        console.log(response)
+                                        return cache.put(event.request, response)
+                                    })
                                     .then(() => res)
                             })
                 })
