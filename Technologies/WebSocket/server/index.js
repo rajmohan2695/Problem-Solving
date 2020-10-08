@@ -5,17 +5,7 @@ const webSocketServer = new WebSocket.Server({
 });
 
 webSocketServer.on('connection', (webSocket) => {
-    console.log('Connect Established');
-    webSocket.send('Connection established');
     webSocket.on('message', (data) => {
-        console.log(data);
-        webSocket.send(JSON.stringify({Hello: "Hi"}));
+        webSocket.send(data);
     })
 })
-
-// Sending and receiving messages via socket in CLIENT side
-/**
- * let wss4 = new WebSocket('ws://localhost:4100');
- * wss7.onmessage = event => { console.log(event) }
- * wss4.send(JSON.stringify({ Hi: "Hello" }));
- */
