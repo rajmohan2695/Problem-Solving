@@ -8,3 +8,12 @@ Content-Type: application/json
     "username": "Raj Mohan",
     "password": "Raj123"
 }
+
+###
+POST http://localhost:3100/login
+Content-Type: application/json
+
+{
+    "username": "Raj Mohan",
+    "password": "Raj123"
+}
