@@ -8,6 +8,10 @@ socketConn.onopen = () => {
     sendBtn.disabled = false;
 }
 
+socketConn.onclose = () => {
+    sendBtn.disabled = true;
+}
+
 socketConn.onmessage = (event) => {
     const { data } = event;
     addMessage({ sender: 'Server', msg: data });
@@ -18,6 +22,7 @@ function addMessage(data) {
     const newMessage = document.createElement('div');
     newMessage.innerText = `${sender} : ${msg}`;
     messages.appendChild(newMessage);
+    messages.scrollTop = messages.scrollHeight;
 }
 
 sendBtn.addEventListener('click', () => {
