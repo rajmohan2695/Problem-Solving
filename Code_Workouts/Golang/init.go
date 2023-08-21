@@ -61,4 +61,34 @@ func main() {
 		break
 	}
 
+	print("\n")
+
+	// switch - basic
+	c := "Sunday"
+	switch c {
+	case "Sunday":
+		fmt.Print("It's a holiday")
+	default:
+		fmt.Print("It's a weekday")
+	}
+
+	print("\n")
+
+	// switch - multiple conditions
+	switch c {
+	case "Sunday", "Saturday":
+		fmt.Print("It's a holiday")
+	default:
+		fmt.Print("It's a weekday")
+	}
+
+	print("\n")
+
+	// switch - true as key by default if we don't mention key explicitly
+	switch {
+	case c == "Sunday":
+		{
+			fmt.Print("It's Sunday")
+		}
+	}
 }
