@@ -91,4 +91,7 @@ func main() {
 			fmt.Print("It's Sunday")
 		}
 	}
+
+	print("\n")
+
 }
