@@ -1,8 +1,9 @@
 package main
 
-import workouts "GoLang/topics"
+import topic "GoLang/topics"
 
 func main() {
-	workouts.Basics()
-	// workouts.ArraysSlices()
+	// topic.Basics()
+	// topic.ArraysSlices()
+	topic.FunctionMain()
 }
