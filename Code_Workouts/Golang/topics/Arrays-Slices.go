@@ -1,8 +1,8 @@
-package main
+package topics
 
 import "fmt"
 
-func main() {
+func ArraysSlices() {
 
 	// Arrays - fixed length
 	var arrayOne [3]int = [3]int{1, 2, 3}

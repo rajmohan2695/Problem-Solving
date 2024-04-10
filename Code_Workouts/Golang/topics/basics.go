@@ -1,10 +1,10 @@
-package main
+package topics
 
 import "fmt"
 
-func main() {
+func Basics() {
 	// print sample
-	fmt.Print("Hello, World!")
+	fmt.Print("Hello, Wod!")
 
 	print("\n")
 
@@ -88,7 +88,7 @@ func main() {
 	switch {
 	case c == "Sunday":
 		{
-			fmt.Print("It's Sunday")
+			fmt.Print("It's Sudy")
 		}
 	}
 
