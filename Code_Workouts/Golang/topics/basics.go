@@ -4,7 +4,7 @@ import "fmt"
 
 func Basics() {
 	// print sample
-	fmt.Print("Hello, Wod!")
+	fmt.Print("Hello, World!") // Output: Hello, World!
 
 	print("\n")
 
@@ -16,6 +16,8 @@ func Basics() {
 		fmt.Printf("Off Control")
 	}
 
+	// Output: On Control
+
 	print("\n")
 
 	// if else - Initialize variable inside if
@@ -25,17 +27,21 @@ func Basics() {
 		fmt.Printf("Off Control")
 	}
 
+	// Output: On Control
+
 	print("\n")
 
 	// if else - multiple conditions
-	number := 10
+	number := 5
 	if number > 9 {
-		print("Hello")
-	} else if 0 < number && number < 9 {
-		print("Between 0 and 9")
+		print("Greater than 9")
+	} else if 4 < number && number < 9 {
+		print("Between 4 and 9")
 	} else {
-		print("Bye")
+		print("Smaller than 4")
 	}
+
+	// Output: Between 4 and 9
 
 	print("\n")
 
@@ -43,6 +49,8 @@ func Basics() {
 	for a := 1; a < 10; a++ {
 		fmt.Printf("%d", a)
 	}
+
+	// Output: 123456789
 
 	print("\n")
 
@@ -53,6 +61,8 @@ func Basics() {
 		b++
 	}
 
+	// Output: 123456789
+
 	print("\n")
 
 	// for - infite loop
@@ -60,6 +70,8 @@ func Basics() {
 		print("Infinite loop")
 		break
 	}
+	// This is an infinite loop until it breaks using break statement
+	// Output: Infinite loop
 
 	print("\n")
 
@@ -72,6 +84,8 @@ func Basics() {
 		fmt.Print("It's a weekday")
 	}
 
+	// Output: It's a holiday
+
 	print("\n")
 
 	// switch - multiple conditions
@@ -82,15 +96,19 @@ func Basics() {
 		fmt.Print("It's a weekday")
 	}
 
+	// Output: It's a holiday
+
 	print("\n")
 
 	// switch - true as key by default if we don't mention key explicitly
 	switch {
 	case c == "Sunday":
 		{
-			fmt.Print("It's Sudy")
+			fmt.Print("It's Sunday")
 		}
 	}
+
+	// Output: It's Sunday
 
 	print("\n")
 

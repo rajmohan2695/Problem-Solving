@@ -4,5 +4,5 @@ import workouts "GoLang/topics"
 
 func main() {
 	workouts.Basics()
-	workouts.ArraysSlices()
+	// workouts.ArraysSlices()
 }
