@@ -8,8 +8,7 @@ type User struct {
 	Age       int64
 }
 
-func Struct() {
-	fmt.Println("\nStruct:")
+func printUserDetail() {
 	user := User{
 		FirstName: "Raj Mohan",
 		LastName:  "Jayakumar",
@@ -21,11 +20,45 @@ func Struct() {
 	fmt.Printf("My User is %s %s, And he/she is %d years old\n", user.FirstName, user.LastName, user.Age)
 }
 
+// Nested structs
+
+type Employee struct {
+	Role              string
+	ExperienceInYears int64
+	User              User
+}
+
+func printEmployeeDetail() {
+	fmt.Println("\n - Nested Structs -")
+	employee := Employee{
+		Role:              "Staff Software Engineer",
+		ExperienceInYears: 8,
+		User: User{
+			FirstName: "Raj Mohan",
+			LastName:  "Jayakumar",
+			Age:       28,
+		},
+	}
+	fmt.Println(employee)
+
+	fmt.Printf("The Employee %s has %d years of experience. Currently he is working as %s\n", employee.User.FirstName, employee.ExperienceInYears, employee.Role)
+}
+
+func Struct() {
+	fmt.Println("\nStruct:")
+	printUserDetail()
+	printEmployeeDetail()
+}
+
 /*
 
 Output:
 
 {Raj Mohan Jayakumar 28}
 My User is Raj Mohan Jayakumar, And he/she is 28 years old
+
+ - Nested Structs -
+{Staff Software Engineer 8 {Raj Mohan Jayakumar 28}}
+The Employee Raj Mohan has 8 years of experience. Currently he is working as Staff Software Engineer
 
 */
