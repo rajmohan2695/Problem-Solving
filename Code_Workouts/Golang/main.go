@@ -8,4 +8,8 @@ func main() {
 	topic.Function()
 	topic.Pointers()
 	topic.Struct()
+	topic.StructWithDynamicInitialization()
+
+	// topic.Playground()
+
 }
