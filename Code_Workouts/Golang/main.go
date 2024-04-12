@@ -7,4 +7,5 @@ func main() {
 	topic.ArraysSlices()
 	topic.Function()
 	topic.Pointers()
+	topic.Struct()
 }
