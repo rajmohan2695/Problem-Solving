@@ -12,7 +12,7 @@ func SampleFunction() string {
 	return "SampleFunction"
 }
 
-func FunctionMain() {
+func Function() {
 	output1 := sampleFunction()
 	fmt.Println(output1)
 	output2 := SampleFunction()
