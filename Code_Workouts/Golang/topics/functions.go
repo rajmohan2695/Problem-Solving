@@ -12,12 +12,18 @@ func SampleFunction() string {
 	return "SampleFunction"
 }
 
+func withMultipleReturnValues() (string, int64) {
+	return "Raj Mohan", 28
+}
+
 func Function() {
 	fmt.Println("\nFunctions:")
 	output1 := sampleFunction()
 	fmt.Println(output1)
 	output2 := SampleFunction()
 	fmt.Println(output2)
+	name, age := withMultipleReturnValues()
+	fmt.Printf("Hi, My name is %s and I am %d years old\n", name, age)
 }
 
 /*
