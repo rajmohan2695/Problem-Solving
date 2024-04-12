@@ -5,5 +5,6 @@ import topic "GoLang/topics"
 func main() {
 	// topic.Basics()
 	// topic.ArraysSlices()
-	topic.Function()
+	// topic.Function()
+	topic.Pointers()
 }
