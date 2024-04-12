@@ -4,12 +4,12 @@ import "fmt"
 
 // Here this function name starts with small s, So this cannot be used in other files expect this file
 func sampleFunction() string {
-	return "Hi"
+	return "sampleFunction"
 }
 
 // Here this function name starts with capital S, So this can be used in other files
 func SampleFunction() string {
-	return "Hello"
+	return "SampleFunction"
 }
 
 func FunctionMain() {
@@ -23,7 +23,7 @@ func FunctionMain() {
 
 Output:
 
-Hi
-Hello
+sampleFunction
+SampleFunction
 
 */
