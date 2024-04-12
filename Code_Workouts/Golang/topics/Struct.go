@@ -44,7 +44,7 @@ func printEmployeeDetail() {
 	fmt.Printf("The Employee %s has %d years of experience. Currently he is working as %s\n", employee.User.FirstName, employee.ExperienceInYears, employee.Role)
 }
 
-// Receiver funtion
+// Receiver function
 
 func (emp *Employee) getEmployeeRoleAndExperienceAsString() string {
 	return fmt.Sprintf("The Employee %s has %d years of experience. Currently he is working as %s\n", emp.User.FirstName, emp.ExperienceInYears, emp.Role)
