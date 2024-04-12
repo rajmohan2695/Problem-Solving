@@ -13,6 +13,7 @@ func SampleFunction() string {
 }
 
 func Function() {
+	fmt.Println("\nFunctions:")
 	output1 := sampleFunction()
 	fmt.Println(output1)
 	output2 := SampleFunction()

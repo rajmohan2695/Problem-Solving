@@ -3,8 +3,8 @@ package main
 import topic "GoLang/topics"
 
 func main() {
-	// topic.Basics()
-	// topic.ArraysSlices()
-	// topic.Function()
+	topic.Basics()
+	topic.ArraysSlices()
+	topic.Function()
 	topic.Pointers()
 }

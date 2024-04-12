@@ -3,6 +3,7 @@ package topics
 import "fmt"
 
 func Basics() {
+	fmt.Println("\nBasics:")
 	// print sample
 	fmt.Print("Hello, World!") // Output: Hello, World!
 
