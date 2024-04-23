@@ -10,7 +10,9 @@ func main() {
 	// topic.Struct()
 	// topic.StructWithDynamicInitialization()
 	// topic.Maps()
-	topic.TodoApiInit()
+	topic.Loops()
+
+	// topic.TodoApiInit()
 
 	// topic.Playground()
 
