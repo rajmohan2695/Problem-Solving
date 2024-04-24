@@ -46,15 +46,6 @@ func Basics() {
 
 	print("\n")
 
-	// for - traditional way
-	for a := 1; a < 10; a++ {
-		fmt.Printf("%d", a)
-	}
-
-	// Output: 123456789
-
-	print("\n")
-
 	// for - with count
 	var b = 1
 	for b < 10 {
